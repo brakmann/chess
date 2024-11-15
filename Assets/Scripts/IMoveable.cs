@@ -1,5 +1,7 @@
+using System.Collections.Generic;
+
 public interface IMoveable
 {
-    void Move(Coordinate.Point coodinateToMove);
-    //Coordinate.Point[] GetAvailableSquares();
+    public void Move(Coordinate.Point coodinateToMove);
+    public List<Coordinate.Point> GetAvailableSquares();
 }
