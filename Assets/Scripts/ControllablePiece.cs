@@ -4,11 +4,13 @@ using UnityEngine;
 public class ControllablePiece : MonoBehaviour
 {
     private Spawner spawner;
-    private IMoveable mover;
+    private IMoveable piece;
+    private PieceStorage pieceStorage;
     void OnMouseDown(){
         spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
-        mover = gameObject.GetComponent(typeof(IMoveable)) as IMoveable;
-        List<Coordinate.Point> spawnList = mover.GetAvailableSquares();
-        spawner.SpawnSquaresToMove(spawnList);
+        piece = gameObject.GetComponent(typeof(IMoveable)) as IMoveable;
+        pieceStorage = GameObject.FindGameObjectWithTag("PieceStorage").GetComponent<PieceStorage>();
+        pieceStorage.StorePiece(piece);
+        spawner.SpawnSquaresToMove(piece.GetAvailableSquares());
     }
 }
