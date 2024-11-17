@@ -11,6 +11,7 @@ public class ControllablePiece : MonoBehaviour
         piece = gameObject.GetComponent(typeof(IMoveable)) as IMoveable;
         pieceStorage = GameObject.FindGameObjectWithTag("PieceStorage").GetComponent<PieceStorage>();
         pieceStorage.StorePiece(piece);
+        spawner.DestroyAllSquaresToMove();
         spawner.SpawnSquaresToMove(piece.GetAvailableSquares());
     }
 }
