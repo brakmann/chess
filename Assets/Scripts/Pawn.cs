@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Drawing;
 using Unity.Collections;
 using UnityEngine;
 
@@ -11,7 +10,8 @@ public class Pawn : MonoBehaviour, IMoveable
     }
     public List<Coordinate.Point> GetAvailableSquares() {
         List<Coordinate.Point> listToReturn = new List<Coordinate.Point>();
-        listToReturn.Add(new Coordinate.Point{x=4, y=4});
+        Coordinate.Point pawnCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();
+        listToReturn.Add(new Coordinate.Point{x=pawnCoordinate.x, y=pawnCoordinate.y+1});
         return listToReturn;
     }
     public void Move(Coordinate.Point coordinateToMove) {//should containt logic of moving a pawn

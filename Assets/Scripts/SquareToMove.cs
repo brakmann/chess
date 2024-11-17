@@ -11,5 +11,6 @@ public class SquareToMove : MonoBehaviour
     void OnMouseDown(){
         piece = pieceStorage.GetStoredPiece() as IMoveable;
         piece.Move(GetComponent<Coordinate>().GetCoordinates());
+        pieceStorage.EraseStorage();
     }
 }
