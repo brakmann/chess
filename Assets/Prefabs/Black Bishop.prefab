@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7071283486794978602}
   - component: {fileID: -294284099683947669}
   - component: {fileID: 7885451349342897873}
+  - component: {fileID: 6477060778817844883}
   m_Layer: 0
   m_Name: Black Bishop
   m_TagString: Untagged
@@ -158,5 +159,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 505f205ca2464482a8ebc0daa04443e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6477060778817844883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031983035949375003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfebe85a2ec844a487a77cbdeaffdab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
