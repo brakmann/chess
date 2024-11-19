@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class PieceStorage : MonoBehaviour
 {
-    private IMoveable storedPiece;
+    private GameObject storedPiece;
     private Spawner spawner;
 
     private void Start(){
         spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
     }
-    public void StorePiece(IMoveable piece) {
+    public void StorePiece(GameObject piece) {
         storedPiece = piece;
     }
-    public IMoveable GetStoredPiece() { //null check
+    public GameObject GetStoredPiece() { //null check
         return storedPiece;
     }
     public void EraseStorage() {

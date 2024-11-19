@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject squareToMoveprefab;
     [SerializeField] private GameObject blackPawnPrefab;
     [SerializeField] private GameObject blackBishopPrefab;
+    [SerializeField] private GameObject blackKnightPrefab;
 
     private void Start() {
         SpawnBlackChessPosition();
@@ -32,5 +33,9 @@ public class Spawner : MonoBehaviour
         bishop1.GetComponent<Coordinate>().ApplyCoordinates(new Coordinate.Point{x=2, y=0});
         GameObject bishop2 = Instantiate(blackBishopPrefab);
         bishop2.GetComponent<Coordinate>().ApplyCoordinates(new Coordinate.Point{x=5, y=0});
+        GameObject knight1 = Instantiate(blackKnightPrefab);
+        knight1.GetComponent<Coordinate>().ApplyCoordinates(new Coordinate.Point{x=1, y=0});
+        GameObject knight2 = Instantiate(blackKnightPrefab);
+        knight2.GetComponent<Coordinate>().ApplyCoordinates(new Coordinate.Point{x=6, y=0});
     }
 }

@@ -549,6 +549,7 @@ MonoBehaviour:
   squareToMoveprefab: {fileID: 6632950176202006713, guid: e4c2411d6b2ae40c8a916965581b86f5, type: 3}
   blackPawnPrefab: {fileID: 8193773164555082014, guid: 661eaf51ba31e4436ae6257444db590f, type: 3}
   blackBishopPrefab: {fileID: 8031983035949375003, guid: 357c5c2b99f384a2ba30a6708f737184, type: 3}
+  blackKnightPrefab: {fileID: 626559224801549610, guid: 937f5b2f8fb4c439d97c665602e939d5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

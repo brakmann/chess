@@ -6,8 +6,7 @@ public class Bishop : MonoBehaviour, IMoveable
     private Coordinate coordinate;
     public List<Coordinate.Point> GetAvailableSquares() {
         List<Coordinate.Point> listToReturn = new List<Coordinate.Point>();
-        Coordinate.Point bishopCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();
-        
+        Coordinate.Point bishopCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();   
         bool canGo = true;
         int i = bishopCoordinate.x + 1;
         int j = bishopCoordinate.y + 1;
@@ -20,7 +19,6 @@ public class Bishop : MonoBehaviour, IMoveable
                 canGo = false;
             }
         }
-
         canGo = true;
         i = bishopCoordinate.x + 1;
         j = bishopCoordinate.y - 1;
@@ -33,7 +31,6 @@ public class Bishop : MonoBehaviour, IMoveable
                 canGo = false;
             }
         }
-
         canGo = true;
         i = bishopCoordinate.x - 1;
         j = bishopCoordinate.y + 1;
@@ -46,7 +43,6 @@ public class Bishop : MonoBehaviour, IMoveable
                 canGo = false;
             }
         }
-
         canGo = true;
         i = bishopCoordinate.x - 1;
         j = bishopCoordinate.y - 1;
@@ -61,9 +57,5 @@ public class Bishop : MonoBehaviour, IMoveable
         }
         Debug.Log(listToReturn);
         return listToReturn;
-    }
-    public void Move(Coordinate.Point coordinateToMove) {
-        coordinate = gameObject.GetComponent<Coordinate>();
-        coordinate.ApplyCoordinates(coordinateToMove);
     }
 }
