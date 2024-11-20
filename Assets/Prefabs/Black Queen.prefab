@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 8613583959318251809}
   - component: {fileID: 7843706246827005798}
   - component: {fileID: -4885607941008225388}
+  - component: {fileID: 5589031479243109456}
+  - component: {fileID: -7348577961852324486}
+  - component: {fileID: -477592062078553444}
   m_Layer: 0
   m_Name: Black Queen
   m_TagString: Untagged
@@ -134,3 +137,39 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.14, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &5589031479243109456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7830998210160634640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98585f92df79747ae9bd94f5438d915d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7348577961852324486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7830998210160634640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1dde05331ae4897ad8d156a54a4be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-477592062078553444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7830998210160634640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505f205ca2464482a8ebc0daa04443e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
