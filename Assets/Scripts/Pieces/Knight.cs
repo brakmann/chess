@@ -1,34 +1,44 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.Collections;
 public class Knight : MonoBehaviour, IMoveable
 {
+    private Board board;
     public List<Coordinate.Point> GetAvailableSquares() {
         List<Coordinate.Point> listToReturn = new List<Coordinate.Point>();
-        Coordinate.Point knightCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();
-        if (knightCoordinate.x - 2 >= 0 && knightCoordinate.y - 1 >= 0 && knightCoordinate.x - 2 <= 7 && knightCoordinate.y - 1 <= 7) {
-            listToReturn.Add(new Coordinate.Point{x=knightCoordinate.x - 2, y=knightCoordinate.y - 1});
+        Coordinate.Point pieceCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();
+        Coordinate.Point tmpCoordinate;
+        board = GameObject.FindGameObjectWithTag("Board").GetComponent<Board>();
+        tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=2, y=1});
+        if (board.IsOnBoard(tmpCoordinate)) {
+            listToReturn.Add(tmpCoordinate);
         }
-        if (knightCoordinate.x - 2 >= 0 && knightCoordinate.y + 1 >= 0 && knightCoordinate.x - 2 <= 7 && knightCoordinate.y + 1 <= 7) {
-            listToReturn.Add(new Coordinate.Point{x=knightCoordinate.x - 2, y=knightCoordinate.y + 1});
+        tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=2, y=-1});
+        if (board.IsOnBoard(tmpCoordinate)) {
+            listToReturn.Add(tmpCoordinate);
         }
-        if (knightCoordinate.x - 1 >= 0 && knightCoordinate.y - 2 >= 0 && knightCoordinate.x - 1 <= 7 && knightCoordinate.y - 2 <= 7) {
-            listToReturn.Add(new Coordinate.Point{x=knightCoordinate.x - 1, y=knightCoordinate.y - 2});
+        tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=1, y=2});
+        if (board.IsOnBoard(tmpCoordinate)) {
+            listToReturn.Add(tmpCoordinate);
         }
-        if (knightCoordinate.x - 1 >= 0 && knightCoordinate.y + 2 >= 0 && knightCoordinate.x - 1 <= 7 && knightCoordinate.y + 2 <= 7) {
-            listToReturn.Add(new Coordinate.Point{x=knightCoordinate.x - 1, y=knightCoordinate.y + 2});
+        tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=1, y=-2});
+        if (board.IsOnBoard(tmpCoordinate)) {
+            listToReturn.Add(tmpCoordinate);
         }
-        if (knightCoordinate.x + 1 >= 0 && knightCoordinate.y - 2 >= 0 && knightCoordinate.x + 1 <= 7 && knightCoordinate.y - 2 <= 7) {
-            listToReturn.Add(new Coordinate.Point{x=knightCoordinate.x + 1, y=knightCoordinate.y - 2});
+        tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=-1, y=2});
+        if (board.IsOnBoard(tmpCoordinate)) {
+            listToReturn.Add(tmpCoordinate);
         }
-        if (knightCoordinate.x + 1 >= 0 && knightCoordinate.y + 2 >= 0 && knightCoordinate.x + 1 <= 7 && knightCoordinate.y + 2 <= 7) {
-            listToReturn.Add(new Coordinate.Point{x=knightCoordinate.x + 1, y=knightCoordinate.y + 2});
+        tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=-1, y=-2});
+        if (board.IsOnBoard(tmpCoordinate)) {
+            listToReturn.Add(tmpCoordinate);
         }
-        if (knightCoordinate.x + 2 >= 0 && knightCoordinate.y - 1 >= 0 && knightCoordinate.x + 2 <= 7 && knightCoordinate.y - 1 <= 7) {
-            listToReturn.Add(new Coordinate.Point{x=knightCoordinate.x + 2, y=knightCoordinate.y - 1});
+        tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=-2, y=1});
+        if (board.IsOnBoard(tmpCoordinate)) {
+            listToReturn.Add(tmpCoordinate);
         }
-        if (knightCoordinate.x + 2 >= 0 && knightCoordinate.y + 1 >= 0 && knightCoordinate.x + 2 <= 7 && knightCoordinate.y + 1 <= 7) {
-            listToReturn.Add(new Coordinate.Point{x=knightCoordinate.x + 2, y=knightCoordinate.y + 1});
+        tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=-2, y=-1});
+        if (board.IsOnBoard(tmpCoordinate)) {
+            listToReturn.Add(tmpCoordinate);
         }
         return listToReturn;
     }

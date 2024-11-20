@@ -3,59 +3,52 @@ using System.Collections.Generic;
 
 public class Bishop : MonoBehaviour, IMoveable
 {
-    private Coordinate coordinate;
+    private Board board;
     public List<Coordinate.Point> GetAvailableSquares() {
         List<Coordinate.Point> listToReturn = new List<Coordinate.Point>();
-        Coordinate.Point bishopCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();   
+        Coordinate.Point bishopCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();
+        Coordinate.Point tmpCoordingate;
+        board = GameObject.FindGameObjectWithTag("Board").GetComponent<Board>();
         bool canGo = true;
-        int i = bishopCoordinate.x + 1;
-        int j = bishopCoordinate.y + 1;
+        tmpCoordingate = Coordinate.AddPoints(bishopCoordinate, new Coordinate.Point{x=1, y=1});
         while (canGo) {
-            if (i < 8 && i >= 0 && j < 8 && j >= 0) {
-                listToReturn.Add(new Coordinate.Point{x=i, y=j});
-                i++;
-                j++;
+            if (board.IsOnBoard(tmpCoordingate)) {
+                listToReturn.Add(tmpCoordingate);
+                tmpCoordingate = Coordinate.AddPoints(tmpCoordingate, new Coordinate.Point{x=1, y=1}); 
             } else {
                 canGo = false;
             }
         }
         canGo = true;
-        i = bishopCoordinate.x + 1;
-        j = bishopCoordinate.y - 1;
+        tmpCoordingate = Coordinate.AddPoints(bishopCoordinate, new Coordinate.Point{x=1, y=-1});
         while (canGo) {
-            if (i < 8 && i >= 0 && j < 8 && j >= 0) {
-                listToReturn.Add(new Coordinate.Point{x=i, y=j});
-                i++;
-                j--;
+            if (board.IsOnBoard(tmpCoordingate)) {
+                listToReturn.Add(tmpCoordingate);
+                tmpCoordingate = Coordinate.AddPoints(tmpCoordingate, new Coordinate.Point{x=1, y=-1}); 
             } else {
                 canGo = false;
             }
         }
         canGo = true;
-        i = bishopCoordinate.x - 1;
-        j = bishopCoordinate.y + 1;
+        tmpCoordingate = Coordinate.AddPoints(bishopCoordinate, new Coordinate.Point{x=-1, y=1});
         while (canGo) {
-            if (i < 8 && i >= 0 && j < 8 && j >= 0) {
-                listToReturn.Add(new Coordinate.Point{x=i, y=j});
-                i--;
-                j++;
+            if (board.IsOnBoard(tmpCoordingate)) {
+                listToReturn.Add(tmpCoordingate);
+                tmpCoordingate = Coordinate.AddPoints(tmpCoordingate, new Coordinate.Point{x=-1, y=1}); 
             } else {
                 canGo = false;
             }
         }
         canGo = true;
-        i = bishopCoordinate.x - 1;
-        j = bishopCoordinate.y - 1;
+        tmpCoordingate = Coordinate.AddPoints(bishopCoordinate, new Coordinate.Point{x=-1, y=-1});
         while (canGo) {
-            if (i < 8 && i >= 0 && j < 8 && j >= 0) {
-                listToReturn.Add(new Coordinate.Point{x=i, y=j});
-                i--;
-                j--;
+            if (board.IsOnBoard(tmpCoordingate)) {
+                listToReturn.Add(tmpCoordingate);
+                tmpCoordingate = Coordinate.AddPoints(tmpCoordingate, new Coordinate.Point{x=-1, y=-1}); 
             } else {
                 canGo = false;
             }
         }
-        Debug.Log(listToReturn);
         return listToReturn;
     }
 }

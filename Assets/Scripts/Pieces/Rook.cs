@@ -3,49 +3,48 @@ using System.Collections.Generic;
 
 public class Rook : MonoBehaviour, IMoveable
 {
+    private Board board;
     public List<Coordinate.Point> GetAvailableSquares() {
         List<Coordinate.Point> listToReturn = new List<Coordinate.Point>();
-        Coordinate.Point rookCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();   
+        Coordinate.Point rookCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();
+        Coordinate.Point tmpCoordingate;
+        board = GameObject.FindGameObjectWithTag("Board").GetComponent<Board>();
         bool canGo = true;
-        int i = rookCoordinate.x + 1;
-        int j = rookCoordinate.y;
+        tmpCoordingate = Coordinate.AddPoints(rookCoordinate, new Coordinate.Point{x=1, y=0});
         while (canGo) {
-            if (i < 8 && i >= 0 && j < 8 && j >= 0) {
-                listToReturn.Add(new Coordinate.Point{x=i, y=j});
-                i++;
+            if (board.IsOnBoard(tmpCoordingate)) {
+                listToReturn.Add(tmpCoordingate);
+                tmpCoordingate = Coordinate.AddPoints(tmpCoordingate, new Coordinate.Point{x=1, y=0}); 
             } else {
                 canGo = false;
             }
         }
         canGo = true;
-        i = rookCoordinate.x - 1;
-        j = rookCoordinate.y;
+        tmpCoordingate = Coordinate.AddPoints(rookCoordinate, new Coordinate.Point{x=-1, y=0});
         while (canGo) {
-            if (i < 8 && i >= 0 && j < 8 && j >= 0) {
-                listToReturn.Add(new Coordinate.Point{x=i, y=j});
-                i--;
+            if (board.IsOnBoard(tmpCoordingate)) {
+                listToReturn.Add(tmpCoordingate);
+                tmpCoordingate = Coordinate.AddPoints(tmpCoordingate, new Coordinate.Point{x=-1, y=0}); 
             } else {
                 canGo = false;
             }
         }
         canGo = true;
-        i = rookCoordinate.x;
-        j = rookCoordinate.y + 1;
+        tmpCoordingate = Coordinate.AddPoints(rookCoordinate, new Coordinate.Point{x=0, y=1});
         while (canGo) {
-            if (i < 8 && i >= 0 && j < 8 && j >= 0) {
-                listToReturn.Add(new Coordinate.Point{x=i, y=j});
-                j++;
+            if (board.IsOnBoard(tmpCoordingate)) {
+                listToReturn.Add(tmpCoordingate);
+                tmpCoordingate = Coordinate.AddPoints(tmpCoordingate, new Coordinate.Point{x=0, y=1}); 
             } else {
                 canGo = false;
             }
         }
         canGo = true;
-        i = rookCoordinate.x;
-        j = rookCoordinate.y - 1;
+        tmpCoordingate = Coordinate.AddPoints(rookCoordinate, new Coordinate.Point{x=0, y=-1});
         while (canGo) {
-            if (i < 8 && i >= 0 && j < 8 && j >= 0) {
-                listToReturn.Add(new Coordinate.Point{x=i, y=j});
-                j--;
+            if (board.IsOnBoard(tmpCoordingate)) {
+                listToReturn.Add(tmpCoordingate);
+                tmpCoordingate = Coordinate.AddPoints(tmpCoordingate, new Coordinate.Point{x=0, y=-1}); 
             } else {
                 canGo = false;
             }
