@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject blackKnightPrefab;
     [SerializeField] private GameObject blackRookPrefab;
     [SerializeField] private GameObject blackQueenPrefab;
+    [SerializeField] private GameObject blackKingPrefab;
+
 
 
     private void Start() {
@@ -49,5 +51,8 @@ public class Spawner : MonoBehaviour
         //spawn queen
         GameObject queen = Instantiate(blackQueenPrefab);
         queen.GetComponent<Coordinate>().ApplyCoordinates(new Coordinate.Point{x=3, y=0});
+        //spawn king
+        GameObject king = Instantiate(blackKingPrefab);
+        king.GetComponent<Coordinate>().ApplyCoordinates(new Coordinate.Point{x=4, y=0});
     }
 }

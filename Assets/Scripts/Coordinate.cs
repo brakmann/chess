@@ -15,7 +15,6 @@ public class Coordinate : MonoBehaviour
     private void ApplyCoordinatesToView(){
         transform.position = viewOrigin + new Vector2(coordinates.x * viewScale.x, coordinates.y * viewScale.y);
     }
-
     public Point GetCoordinates() {
         return coordinates;
     }
