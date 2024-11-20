@@ -18,4 +18,7 @@ public class Coordinate : MonoBehaviour
     public Point GetCoordinates() {
         return coordinates;
     }
+    public static Point AddPoints(Point point1, Point point2) {
+       return new Coordinate.Point{x = point1.x + point2.x, y = point1.y + point2.y}; 
+    }
 }
