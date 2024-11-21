@@ -6,11 +6,11 @@ public class Pawn : MonoBehaviour, IMoveable
     public List<Coordinate.Point> GetAvailableSquares() {
         List<Coordinate.Point> listToReturn = new List<Coordinate.Point>();
         Coordinate.Point pieceCoordinate = gameObject.GetComponent<Coordinate>().GetCoordinates();
-        Coordinate.Point tmpCoordingate;
+        Coordinate.Point tmpCoordinate;
         board = GameObject.FindGameObjectWithTag("Board").GetComponent<Board>();
-        tmpCoordingate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=0, y=1}); 
-        if (board.IsOnBoard(tmpCoordingate)) {
-            listToReturn.Add(tmpCoordingate);
+        tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=0, y=1}); 
+        if (board.CanPlace(tmpCoordinate)) {
+            listToReturn.Add(tmpCoordinate);
         }
         return listToReturn;
     }

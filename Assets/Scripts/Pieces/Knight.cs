@@ -9,35 +9,35 @@ public class Knight : MonoBehaviour, IMoveable
         Coordinate.Point tmpCoordinate;
         board = GameObject.FindGameObjectWithTag("Board").GetComponent<Board>();
         tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=2, y=1});
-        if (board.IsOnBoard(tmpCoordinate)) {
+        if (board.CanPlace(tmpCoordinate)) {
             listToReturn.Add(tmpCoordinate);
         }
         tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=2, y=-1});
-        if (board.IsOnBoard(tmpCoordinate)) {
+        if (board.CanPlace(tmpCoordinate)) {
             listToReturn.Add(tmpCoordinate);
         }
         tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=1, y=2});
-        if (board.IsOnBoard(tmpCoordinate)) {
+        if (board.CanPlace(tmpCoordinate)) {
             listToReturn.Add(tmpCoordinate);
         }
         tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=1, y=-2});
-        if (board.IsOnBoard(tmpCoordinate)) {
+        if (board.CanPlace(tmpCoordinate)) {
             listToReturn.Add(tmpCoordinate);
         }
         tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=-1, y=2});
-        if (board.IsOnBoard(tmpCoordinate)) {
+        if (board.CanPlace(tmpCoordinate)) {
             listToReturn.Add(tmpCoordinate);
         }
         tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=-1, y=-2});
-        if (board.IsOnBoard(tmpCoordinate)) {
+        if (board.CanPlace(tmpCoordinate)) {
             listToReturn.Add(tmpCoordinate);
         }
         tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=-2, y=1});
-        if (board.IsOnBoard(tmpCoordinate)) {
+        if (board.CanPlace(tmpCoordinate)) {
             listToReturn.Add(tmpCoordinate);
         }
         tmpCoordinate = Coordinate.AddPoints(pieceCoordinate, new Coordinate.Point{x=-2, y=-1});
-        if (board.IsOnBoard(tmpCoordinate)) {
+        if (board.CanPlace(tmpCoordinate)) {
             listToReturn.Add(tmpCoordinate);
         }
         return listToReturn;

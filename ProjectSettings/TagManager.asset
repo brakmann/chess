@@ -8,6 +8,7 @@ TagManager:
   - PieceStorage
   - SquareToMove
   - Board
+  - Piece
   layers:
   - Default
   - TransparentFX

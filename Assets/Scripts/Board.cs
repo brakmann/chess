@@ -2,10 +2,19 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    public bool IsOnBoard(Coordinate.Point point) {
+    private bool IsOnBoard(Coordinate.Point point) {
         return point.x >= 0 && point.y >= 0 && point.x <= 7 && point.y <= 7;
     }
-    public bool IsOnBoard(Coordinate.Point point, Coordinate.Point pointToMove) {
-        return point.x + pointToMove.x >= 0 && point.y + pointToMove.y >= 0 && point.x + pointToMove.x <= 7 && point.y + pointToMove.y <= 7;
+    private bool IsFree(Coordinate.Point point) {
+        GameObject[] pieces = GameObject.FindGameObjectsWithTag("Piece");
+        foreach (GameObject piece in pieces) {
+            if (piece.GetComponent<Coordinate>().GetCoordinates().x == point.x && piece.GetComponent<Coordinate>().GetCoordinates().y == point.y) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public bool CanPlace(Coordinate.Point point) {
+        return IsOnBoard(point) && IsFree(point);
     }
 }
