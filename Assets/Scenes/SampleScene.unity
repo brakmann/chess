@@ -129,9 +129,12 @@ GameObject:
   m_Component:
   - component: {fileID: 231739124}
   - component: {fileID: 231739123}
-  m_Layer: 1
+  - component: {fileID: 231739125}
+  - component: {fileID: 231739126}
+  - component: {fileID: 231739127}
+  m_Layer: 0
   m_Name: Board
-  m_TagString: Untagged
+  m_TagString: Board
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,6 +209,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &231739125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231739122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536d50f6f5a744874953dde40a5dc271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &231739126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231739122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66427a0e7b2944cea6592976611b316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pieceStorage: {fileID: 1229990115}
+--- !u!61 &231739127
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231739122}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.42, y: 1.42}
+    newSize: {x: 1.42, y: 1.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.42, y: 1.42}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +624,9 @@ MonoBehaviour:
   blackPawnPrefab: {fileID: 8193773164555082014, guid: 661eaf51ba31e4436ae6257444db590f, type: 3}
   blackBishopPrefab: {fileID: 8031983035949375003, guid: 357c5c2b99f384a2ba30a6708f737184, type: 3}
   blackKnightPrefab: {fileID: 626559224801549610, guid: 937f5b2f8fb4c439d97c665602e939d5, type: 3}
+  blackRookPrefab: {fileID: 7375622532768386031, guid: e7f0d40611eb94cf180cf8b3972064ee, type: 3}
+  blackQueenPrefab: {fileID: 7830998210160634640, guid: 66c4632b6dd3e46e3a07bdbd334d3814, type: 3}
+  blackKingPrefab: {fileID: 8717893848183817299, guid: 89b01435f0e474f8e81568a7ae526090, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
