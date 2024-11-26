@@ -3,9 +3,14 @@ using UnityEngine;
 
 public class DamageSystem : MonoBehaviour
 {
-    public void ApplyTurnDamage(GameController.GameState turn){
-        if (turn == GameController.GameState.blackTurn) {
+    public void OnEndTurn(TurnComponent.Turn turn) {
+        ApplyTurnDamage(turn);
+    }
+    private void ApplyTurnDamage(TurnComponent.Turn turn){
+        if (turn == TurnComponent.Turn.AliveTurn) {
             List<Coordinate.Point> squaresToDamage = new List<Coordinate.Point>();
+            //GameObject[] damagePieces = FindObjectsByType<DealDamageComponent>;
+            //GameObject.
             //for each black piece that has DealDamageComponent 
             //calculate square where the damage will be applied CalculateDamagedSquares
             //append lists
